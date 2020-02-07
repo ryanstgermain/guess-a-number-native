@@ -114,13 +114,13 @@ const styles = StyleSheet.create({
 
   title: {
     fontSize: 20,
-    marginVertical: 10,
+    marginVertical: 10
   },
 
   inputContainer: {
     width: 300,
     maxWidth: '80%',
-    alignItems: 'center',
+    alignItems: 'center'
   },
 
   buttonContainer: {
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    width: 100,
+    width: 100
   },
 
   input: {

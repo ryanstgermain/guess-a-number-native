@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   },
 
   headerTitle: {
-    color: 'white',
+    color: 'white'
   }
 });
 

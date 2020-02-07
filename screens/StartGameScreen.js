@@ -13,6 +13,8 @@ import colors from '../constants/colors';
 import Card from '../components/Card';
 import Input from '../components/Input';
 import NumberContainer from '../components/NumberContainer';
+import TitleText from '../components/TitleText';
+import BodyText from '../components/BodyText';
 
 const StartGameScreen = (props) => {
   const [ enteredValue, setEnteredValue ] = useState('');
@@ -49,13 +51,13 @@ const StartGameScreen = (props) => {
   if (confirmed) {
     confirmedOutput = (
       <Card style={styles.summaryContainer}>
-        <Text>You selected</Text>
+        <BodyText>You selected</BodyText>
         <NumberContainer>
           {selectedNumber}
         </NumberContainer>
         <Button
           title='START GAME'
-          color='black'
+          color={colors.accent}
           onPress={() => props.onStartGame(selectedNumber)}
         />
       </Card>
@@ -68,9 +70,9 @@ const StartGameScreen = (props) => {
         Keyboard.dismiss();
       }}>
       <View style={styles.screen}>
-        <Text style={styles.title}>Start a New Game</Text>
+        <TitleText style={styles.title}>Start a New Game</TitleText>
         <Card style={styles.inputContainer}>
-          <Text>Select a Number</Text>
+          <BodyText>Select a Number</BodyText>
           <Input
             style={styles.input}
             blurOnSubmit
@@ -85,7 +87,7 @@ const StartGameScreen = (props) => {
             <View style={styles.button}>
               <Button
                 title='Confirm'
-                color='black'
+                color={colors.accent}
                 onPress={confirmInputHandler}
               />
             </View>
@@ -114,7 +116,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     marginVertical: 10,
-    fontFamily: 'open-sans-bold'
   },
 
   inputContainer: {
@@ -131,12 +132,13 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    width: 100
+    width: 100,
   },
 
   input: {
     width: 50,
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily: 'open-sans-bold'
   },
 
   summaryContainer: {

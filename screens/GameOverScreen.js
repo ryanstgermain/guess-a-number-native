@@ -5,16 +5,20 @@ import {
   Text,
   Button
 } from 'react-native';
+import colors from '../constants/colors';
+
+import TitleText from '../components/TitleText';
+import BodyText from '../components/BodyText';
 
 const GameOverScreen = (props) => {
   return (
     <View style={styles.screen}>
-      <Text>The Game is Over!</Text>
-      <Text>Number of rounds: {props.numberOfRounds}</Text>
-      <Text>Number chosen was: {props.userNumber}</Text>
+      <TitleText>The Game is Over!</TitleText>
+      <BodyText>Number of rounds: {props.numberOfRounds}</BodyText>
+      <BodyText>Number chosen was: {props.userNumber}</BodyText>
       <Button
         title='NEW GAME'
-        color='black'
+        color={colors.accent}
         onPress={props.onRestart}
       />
     </View>

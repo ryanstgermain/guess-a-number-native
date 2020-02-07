@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
-// import colors from '../constants/colors';
 
 const TitleText = (props) => {
   return (

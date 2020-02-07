@@ -61,7 +61,7 @@ const StartGameScreen = (props) => {
         />
       </Card>
     )
-  }
+  };
 
   return (
     <TouchableWithoutFeedback

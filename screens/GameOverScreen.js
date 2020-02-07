@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   StyleSheet,
+  Text,
   View,
   Button,
   Image
@@ -15,14 +16,18 @@ const GameOverScreen = (props) => {
     <View style={styles.screen}>
       <TitleText>The Game is Over!</TitleText>
       <View style={styles.imageContainer}>
-       <Image
+        <Image
           source={require('../assets/success.png')}
           style={styles.image}
           resizeMode='cover'
         /> 
       </View>
-      <BodyText>Number chosen was: {props.userNumber}</BodyText>
-      <BodyText>Number of rounds: {props.numberOfRounds}</BodyText>
+      <BodyText style={styles.result}>
+        Your phone needed{' '}
+        <Text style={styles.highlight}>{props.numberOfRounds}</Text> rounds to
+        guess the number{' '}
+        <Text style={styles.highlight}>{props.userNumber}</Text>.
+      </BodyText>
       <Button
         title='NEW GAME'
         color={colors.accent}
@@ -52,6 +57,18 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: '100%'
+  },
+
+  result: {
+    textAlign: 'center',
+    fontSize: 20,
+    marginVertical: 30,
+    paddingHorizontal: 10
+  },
+
+  highlight: {
+    color: colors.accent,
+    fontFamily: 'open-sans-bold'
   }
 });
 

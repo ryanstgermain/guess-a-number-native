@@ -10,6 +10,7 @@ import colors from '../constants/colors';
 
 import TitleText from '../components/TitleText';
 import BodyText from '../components/BodyText';
+import MainButton from '../components/MainButton';
 
 const GameOverScreen = (props) => {
   return (
@@ -28,11 +29,9 @@ const GameOverScreen = (props) => {
         guess the number{' '}
         <Text style={styles.highlight}>{props.userNumber}</Text>.
       </BodyText>
-      <Button
-        title='NEW GAME'
-        color={colors.accent}
-        onPress={props.onRestart}
-      />
+      <MainButton onPress={props.onRestart}>
+        NEW GAME
+      </MainButton>
     </View>
   );
 };
